@@ -4,13 +4,21 @@ import * as yup from "yup";
 import axios from "axios";
 import { Link } from "react-router-dom";
 import { useStyles } from "../../common/style";
-import Appbar from "../../common/Appbar";
-import Footer from "../../common/Footer";
+import Lottie from "react-lottie";
+import animationData from "../../../lotties/bitcoin";
 
 //import { Button } from "@material-ui/core";
 //import Employer_Registration from "./Employer/Employer_Registration";
 
 const LoginForm = () => {
+  const defaultOptions = {
+    loop: true,
+    autoplay: true,
+    animationData: animationData,
+    rendererSettings: {
+      preserveAspectRatio: "xMidYMid slice",
+    },
+  };
   const classes = useStyles();
 
   const formInitialSchema = {
@@ -31,21 +39,24 @@ const LoginForm = () => {
   };
   return (
     <Fragment>
-      <div>
-        <Appbar />
-      </div>
-
-      {/* <div class="split left"> */}
-      <div class="centered">
-        <img src="emp1.jpg" alt="employer" width="50%" />
-      </div>
-      {/* </div> */}
-
-      {/* <div class="split right">
-        <div class="centered">
-          <div className={classes.myStyle} > */}
-      <div className="container">
-        <div className="col-md-12 offset-md-12">
+      <div
+        className="container"
+        style={{
+          marginTop: "150px",
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+        }}
+      >
+        <div
+          className="col-md-6 "
+          style={{
+            height: "50vh",
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+          }}
+        >
           <Formik
             initialValues={formInitialSchema}
             validationSchema={schema}
@@ -53,19 +64,15 @@ const LoginForm = () => {
           >
             <Form
               style={{
-                marginTop: "-48%",
-                width: "40%",
-                //height: "40%",
-                marginLeft: "60%",
-
-                boxShadow: "0px 18px 53px 0px rgba(0, 0, 0, 0.3)",
+                height: "60vh",
+                width: "27vw",
+                boxShadow: "0px 5px 10px 0px rgba(0, 0, 0, 0.3)",
               }}
             >
               <div className="col-md-12 mt-2">
                 <br />
-                <b style={{ marginLeft: "50%" }}>
-                  Need an account?{" "}
-                  <Link to="/employer_registration">Sign UP</Link>
+                <b style={{ margin: "auto", marginTop: "50px" }}>
+                  Need an account? <Link to="/SignIn">Sign UP</Link>
                 </b>
                 {/* <a href="Employer_Registration.js">Sign up</a> */}
                 <br />
@@ -75,6 +82,9 @@ const LoginForm = () => {
                   name="email"
                   placeholder="Enter Your Email"
                   className="form-control"
+                  style={{
+                    borderRadius: "40px",
+                  }}
                 />
                 <p className="text-danger">
                   <ErrorMessage name="email" />
@@ -86,6 +96,9 @@ const LoginForm = () => {
                   name="password"
                   placeholder="Enter Your Password"
                   className="form-control"
+                  style={{
+                    borderRadius: "40px",
+                  }}
                 />
                 <p className="text-danger">
                   <ErrorMessage name="password" />
@@ -96,8 +109,8 @@ const LoginForm = () => {
                   type="submit"
                   className="btn btn-primary btn-block"
                   style={{
-                    background:
-                      "linear-gradient(135deg, #13547a 10%, #80d0c7 100%)",
+                    borderRadius: "40px",
+                    background: "#324d88",
                   }}
                 >
                   LOGIN
@@ -112,13 +125,16 @@ const LoginForm = () => {
             </Form>
           </Formik>
         </div>
-      </div>
-      {/* </div>
+        <div
+          className="col-md-6 "
+          style={{
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+          }}
+        >
+          <Lottie options={defaultOptions} height={400} width={400} />
         </div>
-      </div> */}
-
-      <div>
-        <Footer />
       </div>
     </Fragment>
   );

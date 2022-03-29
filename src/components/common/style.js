@@ -24,11 +24,7 @@ export const useStyles = makeStyles((theme) => ({
     bottom: 0,
     width: "100%",
     height: "40px",
-    //background: "linear-gradient(45deg, #fe6b8b 30%, #ff8e53 90%)",
-    //background: "linear-gradient(135deg, #ABDCFF 10%, #0396FF 100%)",
-    //background: "linear-gradient(135deg, #97ABFF 10%, #123597 100%)",
-    //background: "linear-gradient(135deg, #CBBACC 10%, #2580B3 100%)",
-    background: "linear-gradient(135deg, #13547a 10%, #80d0c7 100%)",
+    background: "#fff",
   },
 
   // split: {

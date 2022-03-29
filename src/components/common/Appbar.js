@@ -33,6 +33,7 @@ const useStyles = makeStyles((theme) => ({
     [theme.breakpoints.up("sm")]: {
       display: "block",
     },
+    color: "#324d88",
   },
   search: {
     position: "relative",
@@ -142,7 +143,7 @@ export default function Appbar() {
         <Link to="/login">
           <Button
             style={{
-              background: "linear-gradient(135deg, #13547a 10%, #80d0c7 100%)",
+              background: "#324d88",
               color: "white",
             }}
           >
@@ -177,7 +178,7 @@ export default function Appbar() {
       <AppBar
         position="fixed"
         style={{
-          background: "linear-gradient(135deg, #13547a 10%, #80d0c7 100%)",
+          background: "#fff",
           //background: "linear-gradient(135deg, #CBBACC 10%, #2580B3 100%)",
         }}
       >
@@ -242,8 +243,7 @@ export default function Appbar() {
               <Link to="/login">
                 <Button
                   style={{
-                    background:
-                      "linear-gradient(135deg, #13547a 10%, #80d0c7 100%)",
+                    background: "#324d88",
                     color: "white",
                   }}
                 >
