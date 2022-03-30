@@ -85,32 +85,33 @@ const SignIn = () => {
 
   return (
     <Fragment>
-      {/* <div>
-        <Appbar />
-      </div> */}
-      <div>
-        {" "}
-        <Lottie options={defaultOptions} height={400} width={400} />
-      </div>
-      {/* 
-      <div className={classes.centered}>
-        <img
-          src="emp3.gif"
-          alt="image"
-          width="50%"
-          style={{ marginTop: "6.6%", marginLeft: "7%" }}
-        />
-      </div> */}
-
-      <div className="container">
-        <div className="col-md-12 offset-md-12">
+      <div
+        className="container"
+        style={{
+          marginTop: "150px",
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+        }}
+      >
+        <div
+          className="col-md-6 "
+          style={{
+            height: "50vh",
+            width: "80%",
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+          }}
+        >
           <form
             onSubmit={formik.handleSubmit}
             style={{
-              marginTop: "-53.5%",
-              width: "40%",
+              marginTop: "53%",
+              width: "80%",
               height: "auto",
-              marginLeft: "70%",
+              marginBottom: "40%",
+
               boxShadow: "0px 18px 53px 0px rgba(0, 0, 0, 0.3)",
             }}
           >
@@ -143,9 +144,9 @@ const SignIn = () => {
                 helperText={formik.touched.email && formik.errors.email}
               />
             </div>
-            <div className="col-md-12 mt-2">
-              <br />
-              <TextField
+            {/* <div className="col-md-12 mt-2"> */}
+            <br />
+            {/* <TextField
                 type="text"
                 id="designation"
                 name="designation"
@@ -179,8 +180,8 @@ const SignIn = () => {
                 helperText={
                   formik.touched.company_name && formik.errors.company_name
                 }
-              />
-            </div>
+              /> */}
+            {/* </div> */}
             <div className="col-md-12 mt-2">
               <br />
               <TextField
@@ -229,7 +230,7 @@ const SignIn = () => {
                 REGISTER
               </button>
             </div>
-            <b style={{ marginLeft: "166px" }}>Already have an account?</b>
+            <b style={{ marginLeft: "80px" }}>Already have an account?</b>
             <Link to="/login">
               <b> Sign In</b>
             </Link>
@@ -245,12 +246,10 @@ const SignIn = () => {
             justifyContent: "center",
             alignItems: "center",
           }}
-        ></div>
+        >
+          <Lottie options={defaultOptions} height={400} width={400} />
+        </div>
       </div>
-
-      {/* <div>
-        <Footer />
-      </div> */}
     </Fragment>
   );
 };

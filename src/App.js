@@ -7,6 +7,8 @@ import LoginModal from "./components/pages/LoginModal";
 import LoginForm from "./components/pages/Employer/LoginForm";
 import Appbar from "./components/common/Appbar";
 import Footer from "./components/common/Footer";
+import TradeModel from "./model/TradeModel";
+import LandingPage from "./components/pages/Employer/LandingPage";
 
 function App() {
   return (
@@ -15,7 +17,7 @@ function App() {
         <Appbar></Appbar>
       </div>
       <Routes>
-        <Route path="/" element={<Home />} />
+        <Route path="/" element={<LandingPage />} />
         <Route path="/SignIn" element={<SignIn />} />
         <Route path="/login" element={<LoginForm />} />
         <Route path="/login_modal" element={<LoginModal />} />

@@ -7,9 +7,6 @@ import { useStyles } from "../../common/style";
 import Lottie from "react-lottie";
 import animationData from "../../../lotties/bitcoin";
 
-//import { Button } from "@material-ui/core";
-//import Employer_Registration from "./Employer/Employer_Registration";
-
 const LoginForm = () => {
   const defaultOptions = {
     loop: true,
@@ -117,7 +114,7 @@ const LoginForm = () => {
                 </button>
               </div>
               <br />
-              <b style={{ marginLeft: "63%" }}>
+              <b style={{ marginLeft: "33%" }}>
                 <Link to="#">Forget password?</Link>
               </b>
               <br />

@@ -13,7 +13,7 @@ export default function Footer() {
   return (
     <>
       <div className={classes.footer}>
-        <div style={{ marginLeft: "650px" }}>
+        <div style={{ marginLeft: "650px", marginTop: "3px" }}>
           <IconButton>
             <FacebookIcon />
           </IconButton>

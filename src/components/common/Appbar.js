@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import LoginModal from "../pages/LoginModal";
 //import FormDialog from "../pages/newModal";
@@ -20,6 +20,7 @@ import AccountCircle from "@material-ui/icons/AccountCircle";
 import MailIcon from "@material-ui/icons/Mail";
 import NotificationsIcon from "@material-ui/icons/Notifications";
 import MoreIcon from "@material-ui/icons/MoreVert";
+import BuyModel from "../../model/Buy/BuyModel";
 
 const useStyles = makeStyles((theme) => ({
   grow: {
@@ -64,7 +65,7 @@ const useStyles = makeStyles((theme) => ({
   },
   inputInput: {
     padding: theme.spacing(1, 1, 1, 0),
-    // vertical padding + font size from searchIcon
+
     paddingLeft: `calc(1em + ${theme.spacing(4)}px)`,
     transition: theme.transitions.create("width"),
     width: "100%",
@@ -87,6 +88,7 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 export default function Appbar() {
+  const [isPageOpen, setIsPageOpen] = useState(false);
   const classes = useStyles();
   const [anchorEl, setAnchorEl] = React.useState(null);
   const [mobileMoreAnchorEl, setMobileMoreAnchorEl] = React.useState(null);
@@ -121,10 +123,7 @@ export default function Appbar() {
       transformOrigin={{ vertical: "top", horizontal: "right" }}
       open={isMenuOpen}
       onClose={handleMenuClose}
-    >
-      {/* <MenuItem onClick={handleMenuClose}>Profile</MenuItem>
-      <MenuItem onClick={handleMenuClose}>My account</MenuItem> */}
-    </Menu>
+    ></Menu>
   );
 
   const mobileMenuId = "primary-search-account-menu-mobile";
@@ -139,7 +138,6 @@ export default function Appbar() {
       onClose={handleMobileMenuClose}
     >
       <MenuItem>
-        {/* <Button color="inherit">Employer</Button> */}
         <Link to="/login">
           <Button
             style={{
@@ -151,95 +149,37 @@ export default function Appbar() {
           </Button>
         </Link>
       </MenuItem>
-      {/* <MenuItem>
-        <IconButton aria-label="show 11 new notifications" color="inherit">
-          <Badge badgeContent={11} color="secondary">
-            <NotificationsIcon />
-          </Badge>
-        </IconButton>
-        <p>Notifications</p>
-      </MenuItem>
-      <MenuItem onClick={handleProfileMenuOpen}>
-        <IconButton
-          aria-label="account of current user"
-          aria-controls="primary-search-account-menu"
-          aria-haspopup="true"
-          color="inherit"
-        >
-          <AccountCircle />
-        </IconButton>
-        <p>Profile</p>
-      </MenuItem> */}
     </Menu>
   );
 
   return (
-    <div className={classes.grow}>
-      <AppBar
-        position="fixed"
-        style={{
-          background: "#fff",
-          //background: "linear-gradient(135deg, #CBBACC 10%, #2580B3 100%)",
-        }}
-      >
-        <Toolbar>
-          <IconButton
-            edge="start"
-            className={classes.menuButton}
-            color="inherit"
-            //style={{ color: "black" }}
-            aria-label="open drawer"
-          >
-            {/* <MenuIcon /> */}
-          </IconButton>
-          {/* <img src="job.jpg" width="54px" height="35px" object-fit="contain" />{" "} */}
-          &nbsp;&nbsp;&nbsp;
-          <Typography className={classes.title} variant="h6" noWrap>
-            KIBA LABS
-          </Typography>
-          {/* <div className={classes.search}>
-            <div className={classes.searchIcon}>
-              <SearchIcon />
-            </div>
-            <InputBase
-              placeholder="Search…"
-              classes={{
-                root: classes.inputRoot,
-                input: classes.inputInput,
-              }}
-              inputProps={{ "aria-label": "search" }}
-            />
-          </div> */}
-          <div className={classes.grow} />
-          <div className={classes.sectionDesktop}>
-            {/* <IconButton aria-label="show 4 new mails" color="inherit">
-              <Badge badgeContent={4} color="secondary">
-                <MailIcon />
-              </Badge>
-            </IconButton> */}
-            {/* <IconButton aria-label="show 17 new notifications" color="inherit">
-              <Badge badgeContent={17} color="secondary">
-                <NotificationsIcon />
-              </Badge>
-            </IconButton> */}
+    <div>
+      <div className={classes.grow}>
+        <AppBar
+          position="fixed"
+          style={{
+            background: "#fff",
+          }}
+        >
+          <Toolbar>
             <IconButton
-              edge="end"
-              aria-label="account of current user"
-              aria-controls={menuId}
-              aria-haspopup="true"
-              onClick={handleProfileMenuOpen}
+              edge="start"
+              className={classes.menuButton}
               color="inherit"
-            >
-              {/* <AccountCircle /> */}
-              {/* <TransitionsModal /> */}
-              {/* <FormDialog /> */}
-
-              {/* <LoginModal>
-                <LoginForm />
-              </LoginModal> */}
-              {/* <FormDialog /> */}
-
-              {/* <Button color="inherit">Login</Button> */}
+              aria-label="open drawer"
+            ></IconButton>
+            &nbsp;&nbsp;&nbsp;
+            <Typography className={classes.title} variant="h6" noWrap>
+              KIBA LABS
+            </Typography>
+            <div className={classes.grow} />
+            <div>
+              <Button onClick={() => setIsPageOpen(true)}>Buy Page</Button>
+            </div>
+            <div>
+              <Button>Sell Page</Button>
+            </div>
+            <div className={classes.sectionDesktop}>
               <Link to="/login">
                 <Button
                   style={{
@@ -250,23 +190,25 @@ export default function Appbar() {
                   LOGIN
                 </Button>
               </Link>
-            </IconButton>
-          </div>
-          <div className={classes.sectionMobile}>
-            <IconButton
-              aria-label="show more"
-              aria-controls={mobileMenuId}
-              aria-haspopup="true"
-              onClick={handleMobileMenuOpen}
-              color="inherit"
-            >
-              <MoreIcon />
-            </IconButton>
-          </div>
-        </Toolbar>
-      </AppBar>
-      {renderMobileMenu}
-      {renderMenu}
+
+              <div className={classes.sectionMobile}>
+                <IconButton
+                  aria-label="show more"
+                  aria-controls={mobileMenuId}
+                  aria-haspopup="true"
+                  onClick={handleMobileMenuOpen}
+                  color="inherit"
+                >
+                  <MoreIcon />
+                </IconButton>
+              </div>
+            </div>
+          </Toolbar>
+        </AppBar>
+        {renderMobileMenu}
+        {renderMenu}
+      </div>
+      <BuyModel isPageOpen={isPageOpen} setIsPageOpen={setIsPageOpen} />
     </div>
   );
 }
