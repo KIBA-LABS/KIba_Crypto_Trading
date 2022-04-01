@@ -2,11 +2,12 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { alpha, makeStyles } from "@material-ui/core/styles";
 
-import TradeModel from "../../../model/TradeModel";
+//import TradeModel from "../../../model/TradeModel";
 import { Button, Grid } from "@material-ui/core";
-import BuyModel from "../../../model/Buy/BuyModel";
-//import BuyModel from "../../../model/Buy/BuyModel";
+
 import { TextField } from "@material-ui/core";
+//import BuyModal from "../BuyModal";
+import BuyModal from "../BuyModal";
 
 const useStyles = makeStyles((theme) => ({
   grow: {

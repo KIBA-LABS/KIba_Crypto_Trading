@@ -1,14 +1,12 @@
 import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
 import "./App.css";
 import SignIn from "./components/pages/Employer/SignIn";
-import Home from "./components/pages/Home";
-
-import LoginModal from "./components/pages/LoginModal";
 import LoginForm from "./components/pages/Employer/LoginForm";
 import Appbar from "./components/common/Appbar";
 import Footer from "./components/common/Footer";
-import TradeModel from "./model/TradeModel";
 import LandingPage from "./components/pages/Employer/LandingPage";
+import BuyModal from "./components/pages/BuyModal";
+import SellModel from "./components/pages/Employer/SellModel";
 
 function App() {
   return (
@@ -20,7 +18,8 @@ function App() {
         <Route path="/" element={<LandingPage />} />
         <Route path="/SignIn" element={<SignIn />} />
         <Route path="/login" element={<LoginForm />} />
-        <Route path="/login_modal" element={<LoginModal />} />
+        <Route path="/dialogBuy" element={<BuyModal />} />
+        <Route path="/dialogSell" element={<SellModel />} />
       </Routes>
       <div>
         <Footer />

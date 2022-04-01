@@ -66,15 +66,6 @@ const SignIn = () => {
 
   const handleFormSubmit = (values) => {
     console.log("Submitted Values", values);
-    // axios
-    //   .post("http://127.0.0.1:8000/employers/create/", values)
-    //   .then((res) => {
-    //     if (res.status === 201) {
-    //       formik.resetForm();
-    //     }
-    //     console.log(res);
-    //     console.log(res.data);
-    //   });
   };
   const formik = useFormik({
     initialValues: formInitialSchema,
@@ -146,42 +137,7 @@ const SignIn = () => {
             </div>
             {/* <div className="col-md-12 mt-2"> */}
             <br />
-            {/* <TextField
-                type="text"
-                id="designation"
-                name="designation"
-                value={formik.values.designation}
-                onChange={formik.handleChange}
-                placeholder="Enter Your Designation"
-                className="form-control"
-                error={
-                  formik.touched.designation &&
-                  Boolean(formik.errors.designation)
-                }
-                helperText={
-                  formik.touched.designation && formik.errors.designation
-                }
-              />
-            </div>
-            <div className="col-md-12 mt-2">
-              <br />
-              <TextField
-                type="text"
-                id="company_name"
-                name="company_name"
-                value={formik.values.company_name}
-                onChange={formik.handleChange}
-                placeholder="Enter Your Company Name"
-                className="form-control"
-                error={
-                  formik.touched.company_name &&
-                  Boolean(formik.errors.company_name)
-                }
-                helperText={
-                  formik.touched.company_name && formik.errors.company_name
-                }
-              /> */}
-            {/* </div> */}
+
             <div className="col-md-12 mt-2">
               <br />
               <TextField
