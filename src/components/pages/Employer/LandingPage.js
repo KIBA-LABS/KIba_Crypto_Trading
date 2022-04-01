@@ -3,9 +3,10 @@ import { Link } from "react-router-dom";
 import { alpha, makeStyles } from "@material-ui/core/styles";
 
 import TradeModel from "../../../model/TradeModel";
-import { Grid } from "@material-ui/core";
+import { Button, Grid } from "@material-ui/core";
 import BuyModel from "../../../model/Buy/BuyModel";
 //import BuyModel from "../../../model/Buy/BuyModel";
+import { TextField } from "@material-ui/core";
 
 const useStyles = makeStyles((theme) => ({
   grow: {
@@ -75,14 +76,58 @@ export default function LandingPage() {
   const classes = useStyles();
 
   return (
-    <div className={classes.grow}>
+    <div
+      className={classes.grow}
+      style={{
+        flexDirection: "row",
+        justifyContent: "center",
+        alignItems: "center",
+      }}
+    >
+      <div>
+        <Grid>
+          <input
+            type="textarea"
+            name="textValue"
+            style={{
+              borderWidth: "2px",
+              marginTop: "4%",
+              marginLeft: "25%",
+              width: "50%",
+              // alignSelf: "center",
+            }}
+          />
+        </Grid>
+      </div>
+      <Grid>
+        <h3 style={{ marginLeft: "45%" }}>url link</h3>
+      </Grid>
+      <Grid>
+        <Button>Play store</Button>
+      </Grid>
+      <Grid>
+        <Button>App Store</Button>
+      </Grid>
+      <Grid>
+        <Button>Register Now</Button>
+      </Grid>
+      <Grid>
+        <Button>Help Now</Button>
+      </Grid>
+      <Grid>
+        <Button>Sign In</Button>
+      </Grid>
+      <Grid>
+        <Button>Start your Free Trial</Button>
+      </Grid>
+
       {/* <Grid>
         <TradeModel></TradeModel>
       </Grid> */}
       {/* <Grid>
         <BuyModel></BuyModel>
       </Grid> */}
-      <BuyModel></BuyModel>
+      {/* <BuyModel></BuyModel> */}
     </div>
   );
 }
