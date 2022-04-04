@@ -7,6 +7,7 @@ import Toolbar from "@material-ui/core/Toolbar";
 import IconButton from "@material-ui/core/IconButton";
 import { Button } from "@material-ui/core";
 import Typography from "@material-ui/core/Typography";
+import NavigationTabs from "./NavigationTabs";
 
 import MenuItem from "@material-ui/core/MenuItem";
 
@@ -23,6 +24,8 @@ const useStyles = makeStyles((theme) => ({
       display: "block",
     },
     color: "#324d88",
+    fontWeight: "bold",
+    cursor: "pointer",
   },
   search: {
     position: "relative",
@@ -107,15 +110,21 @@ export default function Appbar() {
             aria-label="open drawer"
           ></IconButton>
           &nbsp;&nbsp;&nbsp;
-          <Typography className={classes.title} variant="h6" noWrap>
-            KIBA LABS
-          </Typography>
+          <Link to="/" style={{ textDecoration: "none" }}>
+            <Typography className={classes.title} variant="h6" noWrap>
+              KIBA LABS
+            </Typography>
+          </Link>
           <div className={classes.grow} />
+          <NavigationTabs></NavigationTabs>
           <Link to="/login">
             <Button
               style={{
                 background: "#324d88",
                 color: "white",
+                borderRadius: 25,
+                paddingLeft: "25px",
+                paddingRight: "25px",
               }}
             >
               LOGIN
